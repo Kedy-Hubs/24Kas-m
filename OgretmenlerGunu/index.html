@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#fbf7f0" />
+  <title>Öğretmenler Günü</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Fraunces:opsz,wght@9..144,300..700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23fbf7f0'/%3E%3Ccircle cx='16' cy='17' r='6' fill='%237dbea6'/%3E%3Cpath d='M16 8c2 3 2 5 0 7' stroke='%236d9a78' fill='none' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <main id="app">
+    <section class="scene scene-1 is-active" data-scene="1" aria-hidden="false">
+      <p class="datestamp">24 Kasım</p>
+      <svg class="sprig" viewBox="0 0 70 110" aria-hidden="true">
+        <path d="M36 102 C 34 72, 38 58, 34 36" fill="none" stroke="#7ea384" stroke-width="1.4" stroke-linecap="round"/>
+        <ellipse cx="34" cy="30" rx="6" ry="9" fill="#f4e39a"/>
+        <ellipse cx="24" cy="38" rx="5.5" ry="8" transform="rotate(-28 24 38)" fill="#d5efe8"/>
+        <ellipse cx="45" cy="39" rx="5.5" ry="8" transform="rotate(26 45 39)" fill="#e7f3c8"/>
+        <ellipse cx="28" cy="22" rx="5" ry="7.5" transform="rotate(-12 28 22)" fill="#f7f1cf"/>
+        <ellipse cx="42" cy="22" rx="5" ry="7.5" transform="rotate(14 42 22)" fill="#cfe8df"/>
+        <path d="M34 48 C 22 58, 18 70, 22 78" fill="none" stroke="#8aaf8c" stroke-width="1.2" stroke-linecap="round"/>
+        <ellipse cx="18" cy="76" rx="6" ry="3.2" transform="rotate(-30 18 76)" fill="#dcecc8"/>
+      </svg>
+      <div class="scene-inner">
+        <h1 class="hello" id="hello">Merhaba, öğretmenim!</h1>
+        <svg class="underline" viewBox="0 0 220 18" aria-hidden="true">
+          <path d="M6 11 C 40 4, 78 16, 118 9 S 176 14, 214 6" fill="none" stroke="#7fb9ae" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <p class="sub">Bugün sizin için küçük ama kocaman anlamlar taşıyan bir teşekkür yolculuğumuz var.</p>
+        <button type="button" class="btn" id="btn-start" disabled>Maceraya Başla</button>
+      </div>
+    </section>
+
+    <section class="scene scene-2" data-scene="2" aria-hidden="true" inert>
+      <div class="scene-inner">
+        <p class="kicker">Yıl Boyu Öğrencilerin Yaptığı Yaramazlık Sayısı</p>
+        <h1 class="unknown">BİLİNMİYOR!?</h1>
+        <p class="big-q" aria-hidden="true">?</p>
+        <p class="soft">Bu yıl öğrencileriniz sayılmayacak kadar yaramazlık yaptı...</p>
+        <button type="button" class="btn" id="btn-next-2">Devam</button>
+      </div>
+    </section>
+
+    <section class="scene scene-3" data-scene="3" aria-hidden="true" inert>
+      <div class="scene-inner patience" id="patience">
+        <h1>Bu Yaramazlıklar Sonucu Onlara Kaç Kere Kızdınız?</h1>
+        <div class="gor-row">
+          <button type="button" class="btn" id="btn-gor">Gör</button>
+        </div>
+        <div class="fold" id="fold" aria-hidden="true">
+          <div class="fold-inner">
+            <p class="answer">Tabii ki de HİÇ!!!!</p>
+            <p class="heart">Bize bunca şeye rağmen her koşulda şefkatinizle yaklaştığınız için teşekkür ederiz, CANIM ÖĞRETMENİM.</p>
+            <button type="button" class="btn" id="btn-next-3" disabled>Devam</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene scene-4" data-scene="4" aria-hidden="true" inert>
+      <div class="scene-inner ask-wrap" id="ask-wrap">
+        <h1 class="secret-line">
+          <span>Size Bir Sır Vereyim Mi</span>
+          <button type="button" class="qmark" id="btn-secret" aria-describedby="click-note" aria-label="Sırrı göster">
+            ?
+            <span class="click-note" id="click-note">Soru işaretine tıklayın</span>
+          </button>
+        </h1>
+      </div>
+      <div class="letter-layout" id="letter-layout" hidden>
+        <div class="letter-stack" id="letter-stack">
+          <div class="paper-slot">
+            <article class="paper" id="paper">
+              <p>Öğrencilere sorduk ki:</p>
+              <p>“En İyi, Mükemmel, Güzeller Güzeli, Şefkatli, Merhametli, Sevecen Öğretmeniniz kim?”</p>
+              <p class="paper-hit">Hepsi cevap olarak sessizce <em>SİZİ</em> gösterdi!!!</p>
+            </article>
+          </div>
+          <div class="envelope" id="envelope">
+            <div class="env-back"></div>
+            <div class="env-front"></div>
+            <div class="env-flap" id="flap"><span class="seal" aria-hidden="true"></span></div>
+          </div>
+        </div>
+        <button type="button" class="btn" id="btn-eee" hidden>Eee?</button>
+      </div>
+    </section>
+
+    <section class="scene scene-5" data-scene="5" aria-hidden="true" inert>
+      <div class="scene-inner finale">
+        <h1 class="finale-title" id="finale-title"></h1>
+        <div class="finale-list" id="finale-list"></div>
+        <p class="finale-end" id="finale-end"></p>
+      </div>
+    </section>
+  </main>
+
+  <div id="candle" aria-hidden="true"></div>
+  <svg id="smoke" viewBox="0 0 80 200" aria-hidden="true">
+    <path d="M40 190 C 40 160, 58 148, 42 118 C 26 90, 62 74, 40 46 C 30 32, 52 18, 40 4" fill="none" stroke="#d9d0c6" stroke-width="1.6" stroke-linecap="round"/>
+  </svg>
+
+  <div id="cells" aria-hidden="true">
+    <div class="veil" id="cell-veil"></div>
+    <div class="cell-grid" id="cell-grid"></div>
+  </div>
+
+  <svg id="sheet" aria-hidden="true">
+    <path id="sheet-path" fill="#1a2823"></path>
+    <path id="sheet-edge" fill="none" stroke="#f0e2bc" stroke-width="1.4" stroke-linecap="round"></path>
+  </svg>
+  <div id="sheet-label" aria-hidden="true"></div>
+  <div id="sparks" aria-hidden="true"></div>
+
+  <noscript>
+    <p class="noscript">Bu teşekkür mektubunu görmek için lütfen tarayıcınızda JavaScript’i açın.</p>
+  </noscript>
+  <script src="js/app.js"></script>
+</body>
+</html>
